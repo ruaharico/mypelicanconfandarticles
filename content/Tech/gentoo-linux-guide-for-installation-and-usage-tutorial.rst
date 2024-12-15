@@ -1543,7 +1543,10 @@ Wayland
 
     EMERGE_DEFAULT_OPTS="--binpkg-changed-deps=y --binpkg-respect-use=y --getbinpkg=y --rebuilt-binaries=y --usepkg-exclude 'acct-*/* sys-kernel/* virtual/* */*-bin'"
 
-  如果是新安装的 Gentoo，那么在最新的 stage3 包里面已经包含了有关于 binhost 镜像源的配置，位置在 :file:`/etc/portage/binrepos.conf/gentoobinhost.conf` ，若是其他没有该默认文件的场景，可以在其父目录 :file:`/etc/portage/binrepos.conf/` 内添加额外的配置文件，比如添加文件 :file:`cnbinhost0.conf` ，并填写如下内容：
+    在保存后，记得运行 :code:`getuto` 以下载与生成 GPG 密钥，否则会出现来自 gpg 程序的报错。
+
+
+  binhost 需另行配置镜像源。如果是新安装 Gentoo，在最新的 stage3 包已经默认配置了官方 binhost 镜像源，位置在 :file:`/etc/portage/binrepos.conf/gentoobinhost.conf` 。如果因各种原因无此文件，或是要添加国内的 binhost 镜像源，可以在 :file:`/etc/portage/binrepos.conf/` 添加配置文件，比如添加文件 :file:`cnbinhost0.conf` ，并填写如下内容：
 
   .. code-block:: shell
 
